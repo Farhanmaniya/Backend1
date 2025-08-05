@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# VS Code
+.vscode/
+
+# macOS / Linux / Windows junk
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+*.env
+
+# Logs & DB
+*.log
+*.sqlite3
+
+# Pytest
+.pytest_cache/
+.cache/
+
+# Jupyter/IPython
+.ipynb_checkpoints
+
+# Pydantic cache
+*.mypy_cache/
+
+# Packaging
+*.egg-info/
+dist/
+build/
