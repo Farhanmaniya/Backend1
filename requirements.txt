@@ -1,4 +1,7 @@
-langchain
-openai
+fastapi
+uvicorn
+pydantic
+python-dotenv
 PyPDF2
-faiss-cpu
+requests
+google-generativeai

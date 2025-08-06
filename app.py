@@ -5,13 +5,13 @@ from pydantic import BaseModel
 from typing import List
 import os
 
-from rag_chain import get_answers
 from dotenv import load_dotenv
+from qa_utils import get_answers_from_pdf
 
-load_dotenv()  # Load environment variables from .env file
+load_dotenv()
 app = FastAPI()
 
-API_KEY = os.getenv("API_KEY")  # Securely loaded from .env
+API_KEY = os.getenv("API_KEY")  # Bearer token
 
 class HackRxRequest(BaseModel):
     documents: str
@@ -24,7 +24,7 @@ async def run_hackrx(request: Request, body: HackRxRequest):
         raise HTTPException(status_code=401, detail="Unauthorized")
 
     try:
-        answers = get_answers(body.documents, body.questions)
+        answers = get_answers_from_pdf(body.documents, body.questions)
         return JSONResponse(content={"answers": answers}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
