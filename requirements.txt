@@ -5,3 +5,5 @@ python-dotenv
 PyPDF2
 requests
 google-generativeai
+PyMuPDF==1.23.7
+
