@@ -1,19 +1,12 @@
-# pdf_utils.py
 import requests
-import fitz  # PyMuPDF
-import tempfile
+from io import BytesIO
+from pdfminer.high_level import extract_text
 
-def download_pdf(url: str) -> str:
-    response = requests.get(url)
+def download_pdf(pdf_url: str) -> BytesIO:
+    response = requests.get(pdf_url)
     response.raise_for_status()
-    temp = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
-    temp.write(response.content)
-    temp.close()
-    return temp.name
+    return BytesIO(response.content)
 
-def extract_text_from_pdf(pdf_path: str) -> str:
-    text = ""
-    with fitz.open(pdf_path) as doc:
-        for page in doc:
-            text += page.get_text()
-    return text.strip()
+def extract_text_from_pdf(pdf_file: BytesIO) -> str:
+    text = extract_text(pdf_file)
+    return text
