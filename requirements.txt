@@ -1,22 +1,17 @@
-fastapi==0.110.0
-uvicorn==0.29.0
-pydantic==2.7.1
-python-dotenv==1.0.1
-httpx==0.27.0
-requests==2.31.0
-python-multipart==0.0.9
+fastapi
+uvicorn
+pydantic
+python-dotenv
+httpx
+requests0
+python-multipart
+PyPDF2
+python-docx
+google-generativeai
+markdown
+tqdm
+langchain
+langchain-community
 
-# PDF + Word document parsing
-PyPDF2==3.0.1
-python-docx==1.1.0
 
-# Embedding + semantic search
-sentence-transformers==2.6.1
-
-# Gemini API (via Google GenerativeAI)
-google-generativeai==0.4.1
-
-# Utilities
-markdown==3.6
-tqdm==4.66.4
 
