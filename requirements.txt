@@ -3,7 +3,7 @@ uvicorn
 pydantic
 python-dotenv
 httpx
-requests0
+requests
 python-multipart
 PyPDF2
 python-docx
@@ -12,6 +12,7 @@ markdown
 tqdm
 langchain
 langchain-community
+
 
 
 
