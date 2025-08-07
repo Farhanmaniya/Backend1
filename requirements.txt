@@ -12,6 +12,7 @@ markdown
 tqdm
 langchain
 langchain-community
+pdfminer.six
 
 
 
